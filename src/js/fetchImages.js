@@ -1,5 +1,5 @@
 export const fetchImages = async (inputValue, numberId) => {
-    return await fetch(`https://pixabay.com/api/?key=29588079-fbc492831fdad231bf7222b96&q=${inputValue}&orientation=horizontal&safesearch=true&image_type=photo&per_page=40&page=${numberId}`
+    return await fetch(`https://pixabay.com/api/?key=32803223-d7ae4ad2160d4578da0803e08&q=${inputValue}&orientation=horizontal&safesearch=true&image_type=photo&per_page=40&page=${numberId}`
     )
      .then(async response => {
       if (!response.ok) {
@@ -15,3 +15,4 @@ export const fetchImages = async (inputValue, numberId) => {
     });
     
 };
+
