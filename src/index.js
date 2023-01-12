@@ -30,6 +30,10 @@ btnSearch.addEventListener('click', e => {
           `Hooray! We found ${foundData.totalHits} images.`
         );
         btnLoadMore.style.display = 'block';
+        if (foundData.totalHits <= 40) {
+            btnLoadMore.style.display = 'none';
+        }
+      
         gallerySimpleLightbox.refresh();
       }
     });
@@ -50,7 +54,10 @@ btnLoadMore.addEventListener('click', () => {
       Notiflix.Notify.success(
         `Hooray! We found ${foundData.totalHits} images.`
       );
-      btnLoadMore.style.display = 'block';
+        btnLoadMore.style.display = 'block';
+        if (foundData.totalHits <= 40) {
+            btnLoadMore.style.display = 'none';
+        }
     }
   });
 });
@@ -66,13 +73,13 @@ function renderImageList(images) {
     <b>Likes</b> <span class="info-item-api"> ${image.likes} </span>
 </p>
             <p class="info-item">
-                <b>Views</b> <span class="info-item-api">${image.views}</span>  
+                <b>Views</b> <span class="info-item-api">${image.views}</span>
             </p>
             <p class="info-item">
-                <b>Comments</b> <span class="info-item-api">${image.comments}</span>  
+                <b>Comments</b> <span class="info-item-api">${image.comments}</span>
             </p>
             <p class="info-item">
-                <b>Downloads</b> <span class="info-item-api">${image.downloads}</span> 
+                <b>Downloads</b> <span class="info-item-api">${image.downloads}</span>
             </p>
         </div>
     </div>`;
@@ -86,3 +93,4 @@ function cleanGallery() {
   pageNumber = 1;
   btnLoadMore.style.display = 'none';
 }
+
